@@ -167,11 +167,7 @@ public class Utils {
     public static String getChangelogURL(Context context) {
         String device = SystemProperties.get(Constants.PROP_NEXT_DEVICE,
                 SystemProperties.get(Constants.PROP_DEVICE));
-        String changelogversion = SystemProperties.get(Constants.PROP_CHANGELOG_VERSION);
-        String changelogurl = context.getString(R.string.menu_changelog_url);
-
-        return changelogurl.replace("{device}", device)
-                .replace("{changelogversion}", changelogversion);
+        return context.getString(R.string.changelog_url, device);
     }
 
     public static void triggerUpdate(Context context, String downloadId) {
