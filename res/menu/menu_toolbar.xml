@@ -9,9 +9,11 @@
     <item
         android:id="@+id/menu_preferences"
         android:title="@string/menu_preferences"
-        app:showAsAction="never" />
+        android:icon="@drawable/ic_preferences"
+        app:showAsAction="always" />
     <item
         android:id="@+id/menu_sf_mirrors"
         android:title="@string/sf_mirror_preferences"
         app:showAsAction="never" />
+
 </menu>
