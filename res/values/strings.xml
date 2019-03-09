@@ -30,7 +30,6 @@
         Optional placeholders replaced at runtime:
           {device} - Device name
           {type} - Build type
-          {incr} - Incremental version
     -->
     <string name="updater_server_url" translatable="false">https://updater.blissroms.com/api/v1/{device}/{type}</string>
 
