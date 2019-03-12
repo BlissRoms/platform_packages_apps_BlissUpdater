@@ -34,10 +34,10 @@ public final class Constants {
 
     public static final String PROP_AB_DEVICE = "ro.build.ab_update";
     public static final String PROP_BUILD_DATE = "ro.build.date.utc";
-    public static final String PROP_BUILD_VERSION = "ro.bliss.build.version";
+    public static final String PROP_BUILD_VERSION = "ro.bliss.version";
     public static final String PROP_DEVICE = "ro.bliss.device";
     public static final String PROP_NEXT_DEVICE = "ro.updater.next_device";
-    public static final String PROP_RELEASE_TYPE = "ro.bliss.releasetype";
+    public static final String PROP_RELEASE_TYPE = "ro.bliss.build.status";
     public static final String PROP_UPDATER_ALLOW_DOWNGRADING = "bliss.updater.allow_downgrading";
     public static final String PROP_UPDATER_URI = "bliss.updater.uri";
 
