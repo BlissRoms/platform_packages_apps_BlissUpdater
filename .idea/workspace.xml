@@ -5,10 +5,13 @@
       <config />
     </shared>
   </component>
+<<<<<<< HEAD
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
+=======
+>>>>>>> 1800535... BlissUpdater: Fix BATTERY_PLUGGED_ANY Symbol not found Error
   <component name="ChangeListManager">
     <list default="true" id="c321a342-badb-42c3-9faa-36c28f1a310a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -16,6 +19,7 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BlissUpdater.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BlissUpdater.iml" afterDir="false" />
@@ -46,6 +50,16 @@
       <change beforePath="$PROJECT_DIR$/src/org/lineageos/updater/model/UpdateInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/blissroms/updater/model/UpdateInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/lineageos/updater/model/UpdateStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/blissroms/updater/model/UpdateStatus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/lineageos/updater/ui/FlingBehavior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/blissroms/updater/ui/FlingBehavior.java" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlissUpdater.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BlissUpdater.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/lineageos/updater/UpdatesListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/lineageos/updater/UpdatesListAdapter.java" afterDir="false" />
+>>>>>>> 1800535... BlissUpdater: Fix BATTERY_PLUGGED_ANY Symbol not found Error
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +87,11 @@
           <entry key="gradle" value="1" />
           <entry key="java" value="2" />
           <entry key="properties" value="1" />
+<<<<<<< HEAD
           <entry key="xml" value="5" />
+=======
+          <entry key="xml" value="1" />
+>>>>>>> 1800535... BlissUpdater: Fix BATTERY_PLUGGED_ANY Symbol not found Error
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -81,21 +99,31 @@
           <entry key="Groovy" value="1" />
           <entry key="JAVA" value="2" />
           <entry key="Properties" value="1" />
+<<<<<<< HEAD
           <entry key="XML" value="5" />
+=======
+          <entry key="XML" value="1" />
+>>>>>>> 1800535... BlissUpdater: Fix BATTERY_PLUGGED_ANY Symbol not found Error
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gradle" value="14" />
+<<<<<<< HEAD
           <entry key="txt" value="2" />
           <entry key="xml" value="12" />
+=======
+>>>>>>> 1800535... BlissUpdater: Fix BATTERY_PLUGGED_ANY Symbol not found Error
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="14" />
+<<<<<<< HEAD
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="XML" value="12" />
+=======
+>>>>>>> 1800535... BlissUpdater: Fix BATTERY_PLUGGED_ANY Symbol not found Error
         </counts>
       </usages-collector>
     </session>
@@ -105,12 +133,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="825">
+=======
+            <state relative-caret-position="345">
+>>>>>>> 1800535... BlissUpdater: Fix BATTERY_PLUGGED_ANY Symbol not found Error
               <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
           <provider editor-type-id="android-manifest" />
@@ -120,6 +153,32 @@
               <folding>
                 <element signature="e#1151#1173#0" expanded="true" />
               </folding>
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/org/lineageos/updater/UpdatesListAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="415">
+              <caret line="559" column="175" selection-start-line="559" selection-start-column="175" selection-end-line="559" selection-end-column="175" />
+              <folding>
+                <element signature="e#24794#24871#0" expanded="true" />
+                <element signature="e#24890#24970#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+          <provider editor-type-id="android-manifest" />
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/lineageos/updater/UpdatesActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-522">
+              <caret line="264" column="40" selection-start-line="264" selection-start-column="40" selection-end-line="264" selection-end-column="40" />
+>>>>>>> 1800535... BlissUpdater: Fix BATTERY_PLUGGED_ANY Symbol not found Error
             </state>
           </provider>
         </entry>
@@ -178,8 +237,11 @@
       <list>
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/org/lineageos/updater/UpdatesListAdapter.java" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/res/layout/activity_updates.xml" />
+=======
+>>>>>>> 1800535... BlissUpdater: Fix BATTERY_PLUGGED_ANY Symbol not found Error
       </list>
     </option>
   </component>
@@ -212,6 +274,7 @@
             <path>
               <item name="BlissUpdater" type="1abcf292:AndroidViewProjectNode" />
               <item name="BlissUpdater" type="feadf853:AndroidModuleNode" />
+<<<<<<< HEAD
             </path>
             <path>
               <item name="BlissUpdater" type="1abcf292:AndroidViewProjectNode" />
@@ -223,26 +286,40 @@
               <item name="BlissUpdater" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="com" type="cbb59c9e:AndroidPsiDirectoryNode" />
+=======
+>>>>>>> 1800535... BlissUpdater: Fix BATTERY_PLUGGED_ANY Symbol not found Error
             </path>
             <path>
               <item name="BlissUpdater" type="1abcf292:AndroidViewProjectNode" />
               <item name="BlissUpdater" type="feadf853:AndroidModuleNode" />
+<<<<<<< HEAD
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="com" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="blissroms" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="manifests" type="f94875db:AndroidManifestsGroupNode" />
+>>>>>>> 1800535... BlissUpdater: Fix BATTERY_PLUGGED_ANY Symbol not found Error
             </path>
             <path>
               <item name="BlissUpdater" type="1abcf292:AndroidViewProjectNode" />
               <item name="BlissUpdater" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+<<<<<<< HEAD
               <item name="com" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="blissroms" type="462c0819:PsiDirectoryNode" />
               <item name="updater" type="462c0819:PsiDirectoryNode" />
+=======
+>>>>>>> 1800535... BlissUpdater: Fix BATTERY_PLUGGED_ANY Symbol not found Error
             </path>
             <path>
               <item name="BlissUpdater" type="1abcf292:AndroidViewProjectNode" />
               <item name="BlissUpdater" type="feadf853:AndroidModuleNode" />
+<<<<<<< HEAD
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
+=======
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="updater" type="cbb59c9e:AndroidPsiDirectoryNode" />
+>>>>>>> 1800535... BlissUpdater: Fix BATTERY_PLUGGED_ANY Symbol not found Error
             </path>
             <path>
               <item name="BlissUpdater" type="1abcf292:AndroidViewProjectNode" />
@@ -340,7 +417,11 @@
         <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
+<<<<<<< HEAD
       <option name="ACTIVITY_CLASS" value="com.blissroms.updater.UpdatesActivity" />
+=======
+      <option name="ACTIVITY_CLASS" value="org.lineageos.updater.UpdatesActivity" />
+>>>>>>> 1800535... BlissUpdater: Fix BATTERY_PLUGGED_ANY Symbol not found Error
       <method v="2">
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
@@ -363,6 +444,7 @@
     <frame x="-2" y="0" width="1924" height="1054" extended-state="6" />
     <editor active="true" />
     <layout>
+<<<<<<< HEAD
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="1" />
       <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.32977587" />
@@ -387,6 +469,31 @@
       <window_info anchor="right" id="Gradle" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
+=======
+      <window_info content_ui="combo" id="Project" visible="true" weight="0.32977587" />
+      <window_info id="Structure" side_tool="true" />
+      <window_info id="Build Variants" side_tool="true" />
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Run" />
+      <window_info anchor="bottom" id="Logcat" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="TODO" />
+      <window_info anchor="bottom" id="Android Profiler" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Find" weight="0.32901832" />
+      <window_info anchor="bottom" id="Debug" />
+      <window_info anchor="bottom" id="Terminal" weight="0.32901832" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Build" visible="true" weight="0.32901832" />
+      <window_info anchor="right" id="Device File Explorer" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Gradle" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Palette&#9;" />
+>>>>>>> 1800535... BlissUpdater: Fix BATTERY_PLUGGED_ANY Symbol not found Error
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -396,7 +503,15 @@
     <entry file="file://$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/com/blissroms/updater/UpdatesActivity.java">
+=======
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/lineageos/updater/UpdatesActivity.java">
+>>>>>>> 1800535... BlissUpdater: Fix BATTERY_PLUGGED_ANY Symbol not found Error
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-522">
           <caret line="264" column="40" selection-start-line="264" selection-start-column="40" selection-end-line="264" selection-end-column="40" />
@@ -405,8 +520,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="825">
           <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
+=======
+        <state relative-caret-position="345">
+          <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/lineageos/updater/UpdatesListAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="559" column="175" selection-start-line="559" selection-start-column="175" selection-end-line="559" selection-end-column="175" />
+          <folding>
+            <element signature="e#24794#24871#0" expanded="true" />
+            <element signature="e#24890#24970#0" expanded="true" />
+          </folding>
+>>>>>>> 1800535... BlissUpdater: Fix BATTERY_PLUGGED_ANY Symbol not found Error
         </state>
       </provider>
     </entry>

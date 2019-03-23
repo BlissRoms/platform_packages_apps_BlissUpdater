@@ -560,7 +560,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         int percent = Math.round(100.f * intent.getIntExtra(BatteryManager.EXTRA_LEVEL, 100) /
                 intent.getIntExtra(BatteryManager.EXTRA_SCALE, 100));
         int plugged = intent.getIntExtra(BatteryManager.EXTRA_PLUGGED, 0);
-        int required = (plugged & BatteryManager.BATTERY_PLUGGED_ANY) != 0 ?
+        int required = (plugged != 0 && (BatteryManager.BATTERY_PLUGGED_USB != 0 || BatteryManager.BATTERY_PLUGGED_AC != 0 || BatteryManager.BATTERY_PLUGGED_WIRELESS != 0))  ?
                 mActivity.getResources().getInteger(R.integer.battery_ok_percentage_charging) :
                 mActivity.getResources().getInteger(R.integer.battery_ok_percentage_discharging);
         return percent >= required;
