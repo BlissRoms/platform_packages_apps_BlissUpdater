@@ -31,14 +31,14 @@ import com.blissroms.updater.misc.BuildInfoUtils;
 import com.blissroms.updater.misc.Constants;
 import com.blissroms.updater.misc.StringGenerator;
 
-import org.lineageos.updater.R;
+import com.blissroms.updater.R;
 
 import java.text.DateFormat;
 
 public class UpdaterReceiver extends BroadcastReceiver {
 
     public static final String ACTION_INSTALL_REBOOT =
-            "org.lineageos.updater.action.INSTALL_REBOOT";
+            "com.blissroms.updater.action.INSTALL_REBOOT";
 
     private static final String INSTALL_ERROR_NOTIFICATION_CHANNEL =
             "install_error_notification_channel";

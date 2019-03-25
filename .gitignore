@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-*.iml
-.gradle*/*
-/local.properties
-.idea
-.DS_Store
-/build
-/captures
-/gradle
-/gradlew
-/gradlew.bat
-/system_libs/*.jar
-/keystore.properties
-*.jks
-=======
 # Built application files
 *.apk
 *.ap_
@@ -78,4 +63,18 @@ fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
 fastlane/readme.md
->>>>>>> 1800535... BlissUpdater: Fix BATTERY_PLUGGED_ANY Symbol not found Error
+
+*.iml
+.gradle
+/local.properties
+.idea
+.DS_Store
+/build
+/captures
+/gradle
+/gradlew
+/gradlew.bat
+/system_libs/*.jar
+/keystore.properties
+*.jks
+release

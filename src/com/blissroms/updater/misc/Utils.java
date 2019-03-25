@@ -38,7 +38,7 @@ import com.blissroms.updater.model.UpdateInfo;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.lineageos.updater.R;
+import com.blissroms.updater.R;
 import com.blissroms.updater.UpdatesDbHelper;
 
 import java.io.BufferedReader;

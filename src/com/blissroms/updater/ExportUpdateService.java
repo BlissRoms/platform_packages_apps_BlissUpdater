@@ -28,7 +28,7 @@ import android.widget.Toast;
 
 import com.blissroms.updater.misc.FileUtils;
 
-import org.lineageos.updater.R;
+import com.blissroms.updater.R;
 
 import java.io.File;
 import java.io.IOException;

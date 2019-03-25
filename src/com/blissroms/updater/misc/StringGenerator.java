@@ -18,7 +18,7 @@ package com.blissroms.updater.misc;
 import android.content.Context;
 import android.content.res.Resources;
 
-import org.lineageos.updater.R;
+import com.blissroms.updater.R;
 
 import java.text.DateFormat;
 import java.util.Date;

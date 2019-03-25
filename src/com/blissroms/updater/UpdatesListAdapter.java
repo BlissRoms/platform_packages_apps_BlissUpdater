@@ -54,7 +54,7 @@ import com.blissroms.updater.misc.Utils;
 import com.blissroms.updater.model.UpdateInfo;
 import com.blissroms.updater.model.UpdateStatus;
 
-import org.lineageos.updater.R;
+import com.blissroms.updater.R;
 
 import com.blissroms.updater.controller.UpdaterController;
 

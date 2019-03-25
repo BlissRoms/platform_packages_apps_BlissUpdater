@@ -31,7 +31,7 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.text.format.Formatter;
 import android.util.Log;
 
-import org.lineageos.updater.R;
+import com.blissroms.updater.R;
 import com.blissroms.updater.UpdaterReceiver;
 import com.blissroms.updater.UpdatesActivity;
 import com.blissroms.updater.misc.BuildInfoUtils;

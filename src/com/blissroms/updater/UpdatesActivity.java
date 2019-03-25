@@ -57,7 +57,7 @@ import com.blissroms.updater.misc.Utils;
 import com.blissroms.updater.model.UpdateInfo;
 
 import org.json.JSONException;
-import org.lineageos.updater.R;
+import com.blissroms.updater.R;
 
 import com.blissroms.updater.controller.UpdaterController;
 
