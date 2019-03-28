@@ -40,6 +40,7 @@ public final class Constants {
     public static final String PROP_RELEASE_TYPE = "ro.bliss.build.status";
     public static final String PROP_UPDATER_ALLOW_DOWNGRADING = "bliss.updater.allow_downgrading";
     public static final String PROP_UPDATER_URI = "bliss.updater.uri";
+    public static final String PROP_CHANGELOG_VERSION = "ro.bliss.changelog.version";
 
     public static final String PREF_INSTALL_OLD_TIMESTAMP = "install_old_timestamp";
     public static final String PREF_INSTALL_NEW_TIMESTAMP = "install_new_timestamp";
