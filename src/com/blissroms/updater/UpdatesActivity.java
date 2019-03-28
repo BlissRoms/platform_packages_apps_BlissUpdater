@@ -83,7 +83,7 @@ public class UpdatesActivity extends UpdatesListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_updates);
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
         mAdapter = new UpdatesListAdapter(this);
         recyclerView.setAdapter(mAdapter);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
@@ -116,13 +116,13 @@ public class UpdatesActivity extends UpdatesListActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        TextView headerTitle = (TextView) findViewById(R.id.header_title);
+        TextView headerTitle = findViewById(R.id.header_title);
         headerTitle.setText(getString(R.string.header_title_text,
                 BuildInfoUtils.getBuildVersion()));
 
         updateLastCheckedString();
 
-        TextView headerBuildVersion = (TextView) findViewById(R.id.header_build_version);
+        TextView headerBuildVersion = findViewById(R.id.header_build_version);
         headerBuildVersion.setText(
                 getString(R.string.header_android_version, Build.VERSION.RELEASE));
 
@@ -131,9 +131,8 @@ public class UpdatesActivity extends UpdatesListActivity {
                 DateFormat.LONG, BuildInfoUtils.getBuildDateTimestamp()));
 
         // Switch between header title and appbar title minimizing overlaps
-        final CollapsingToolbarLayout collapsingToolbar =
-                (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
-        final AppBarLayout appBar = (AppBarLayout) findViewById(R.id.app_bar);
+        final CollapsingToolbarLayout collapsingToolbar = findViewById(R.id.collapsing_toolbar);
+        final AppBarLayout appBar = findViewById(R.id.app_bar);
         appBar.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
             boolean mIsShown = false;
 

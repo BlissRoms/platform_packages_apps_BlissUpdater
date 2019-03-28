@@ -33,7 +33,7 @@
                 android:paddingBottom="8sp"
                 android:textColor="?android:attr/textColorPrimary"
                 android:textSize="16sp"
-                tools:text="LineageOS 15.1" />
+                tools:text="BlissRoms v11.6" />
 
             <TextView
                 android:id="@+id/build_date"
@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:maxLines="1"
                 android:textSize="14sp"
-                tools:text="29 February 2018" />
+                tools:text="29 March 2019" />
 
             <RelativeLayout
                 android:layout_width="wrap_content"
