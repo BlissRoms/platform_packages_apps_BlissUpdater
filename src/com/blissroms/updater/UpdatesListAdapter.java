@@ -537,17 +537,12 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
     }
 
     private void showInfoDialog() {
-        String messageString = String.format(StringGenerator.getCurrentLocale(mActivity),
-                mActivity.getString(R.string.blocked_update_dialog_message),
-                mActivity.getString(R.string.blocked_update_info_url));
-        SpannableString message = new SpannableString(messageString);
-        Linkify.addLinks(message, Linkify.WEB_URLS);
         AlertDialog dialog = new AlertDialog.Builder(mActivity)
                 .setTitle(R.string.blocked_update_dialog_title)
                 .setPositiveButton(android.R.string.ok, null)
-                .setMessage(message)
+                .setMessage(R.string.blocked_update_dialog_message)
                 .show();
-        TextView textView = (TextView) dialog.findViewById(android.R.id.message);
+        TextView textView = dialog.findViewById(android.R.id.message);
         textView.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
