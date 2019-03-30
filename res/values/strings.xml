@@ -152,4 +152,8 @@
 
 	<string name="changelog_url" translatable="false">https://raw.githubusercontent.com/BlissRoms-Devices/Changelogs/q/Changelog.txt</string>
     <string name="changelog_fail">Failed to retrieve changelog or changelog unavailable</string>
+
+    <!-- Update Check failures -->
+    <string name="snack_download_client_failed">Failed to invoke download client!</string>
+    <string name="snack_updates_server_failed">Failed to connect to server! Try again later!</string>
 </resources>
