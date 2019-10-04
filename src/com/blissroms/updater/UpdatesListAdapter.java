@@ -98,14 +98,14 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
 
         public ViewHolder(final View view) {
             super(view);
-            mAction = (Button) view.findViewById(R.id.update_action);
+            mAction = view.findViewById(R.id.update_action);
 
-            mBuildDate = (TextView) view.findViewById(R.id.build_date);
-            mBuildVersion = (TextView) view.findViewById(R.id.build_version);
-            mBuildSize = (TextView) view.findViewById(R.id.build_size);
+            mBuildDate = view.findViewById(R.id.build_date);
+            mBuildVersion = view.findViewById(R.id.build_version);
+            mBuildSize = view.findViewById(R.id.build_size);
 
-            mProgressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
-            mProgressText = (TextView) view.findViewById(R.id.progress_text);
+            mProgressBar = view.findViewById(R.id.progress_bar);
+            mProgressText = view.findViewById(R.id.progress_text);
         }
     }
 
@@ -299,7 +299,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         }
 
         View checkboxView = LayoutInflater.from(mActivity).inflate(R.layout.checkbox_view, null);
-        CheckBox checkbox = (CheckBox) checkboxView.findViewById(R.id.checkbox);
+        CheckBox checkbox = checkboxView.findViewById(R.id.checkbox);
         checkbox.setText(R.string.checkbox_mobile_data_warning);
 
         new AlertDialog.Builder(mActivity)

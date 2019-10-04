@@ -113,7 +113,7 @@ public class UpdatesActivity extends UpdatesListActivity {
             }
         };
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -128,7 +128,7 @@ public class UpdatesActivity extends UpdatesListActivity {
         headerBuildVersion.setText(
                 getString(R.string.header_android_version, Build.VERSION.RELEASE));
 
-        TextView headerBuildDate = (TextView) findViewById(R.id.header_build_date);
+        TextView headerBuildDate = findViewById(R.id.header_build_date);
         headerBuildDate.setText(StringGenerator.getDateLocalizedUTC(this,
                 DateFormat.LONG, BuildInfoUtils.getBuildDateTimestamp()));
 
@@ -366,7 +366,7 @@ public class UpdatesActivity extends UpdatesListActivity {
         String lastCheckString = getString(R.string.header_last_updates_check,
                 StringGenerator.getDateLocalized(this, DateFormat.LONG, lastCheck),
                 StringGenerator.getTimeLocalized(this, lastCheck));
-        TextView headerLastCheck = (TextView) findViewById(R.id.header_last_check);
+        TextView headerLastCheck = findViewById(R.id.header_last_check);
         headerLastCheck.setText(lastCheckString);
     }
 
