@@ -44,4 +44,5 @@
         <item quantity="other"><xliff:g id="count">%d</xliff:g> tundi jäänud</item>
     </plurals>
     <string name="ongoing_channel_title">Käimasolevad allalaadimised</string>
+    <string name="update_button">Check for update</string>
 </resources>

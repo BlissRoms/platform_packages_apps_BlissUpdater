@@ -51,4 +51,5 @@
     </plurals>
     <string name="export_channel_title">Coileanadh an às-phortaidh</string>
     <string name="ongoing_channel_title">’Ga luchdadh a-nuas</string>
+    <string name="update_button">Check for update</string>
 </resources>

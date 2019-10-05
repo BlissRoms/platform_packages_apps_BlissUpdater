@@ -121,4 +121,5 @@
     <string name="new_updates_channel_title">Nové aktualizace</string>
     <string name="ongoing_channel_title">Probíhající stahování</string>
     <string name="update_failed_channel_title">Aktualizace se nezdařila</string>
+    <string name="update_button">Check for update</string>
 </resources>

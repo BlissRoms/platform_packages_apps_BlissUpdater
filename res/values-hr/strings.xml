@@ -89,4 +89,5 @@
     <string name="export_channel_title">Kraj izvoza</string>
     <string name="new_updates_channel_title">Nova ažuriranja</string>
     <string name="ongoing_channel_title">Preuzimanja u tijeku</string>
+    <string name="update_button">Check for update</string>
 </resources>

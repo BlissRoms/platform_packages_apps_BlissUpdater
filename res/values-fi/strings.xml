@@ -115,4 +115,5 @@
     <string name="new_updates_channel_title">Uudet päivitykset</string>
     <string name="ongoing_channel_title">Käynnissä olevat lataukset</string>
     <string name="update_failed_channel_title">Päivitys epäonnistui</string>
+    <string name="update_button">Check for update</string>
 </resources>

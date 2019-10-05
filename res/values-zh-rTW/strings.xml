@@ -112,4 +112,5 @@
     <string name="new_updates_channel_title">有新的更新</string>
     <string name="ongoing_channel_title">目前下載</string>
     <string name="update_failed_channel_title">更新失敗</string>
+    <string name="update_button">Check for update</string>
 </resources>

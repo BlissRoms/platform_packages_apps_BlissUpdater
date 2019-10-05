@@ -115,4 +115,5 @@
     <string name="new_updates_channel_title">Nuovi aggiornamenti</string>
     <string name="ongoing_channel_title">Download in corso</string>
     <string name="update_failed_channel_title">Aggiornamento fallito</string>
+    <string name="update_button">Check for update</string>
 </resources>

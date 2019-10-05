@@ -115,4 +115,5 @@
     <string name="new_updates_channel_title">Νέες ενημερώσεις</string>
     <string name="ongoing_channel_title">Λήψεις σε εξέλιξη</string>
     <string name="update_failed_channel_title">Η ενημέρωση απέτυχε</string>
+    <string name="update_button">Check for update</string>
 </resources>

@@ -81,4 +81,5 @@
     <string name="blocked_update_dialog_message">Ni ellir gosod y diweddariad hwn gyda\'r ap diweddarydd. Gweler <xliff:g id="info_url">%1$s</xliff:g> am wybodaeth bellach.</string>
     <string name="export_channel_title">Cwblhawyd allforio</string>
     <string name="ongoing_channel_title">Llwythi sy\'n parhau</string>
+    <string name="update_button">Check for update</string>
 </resources>

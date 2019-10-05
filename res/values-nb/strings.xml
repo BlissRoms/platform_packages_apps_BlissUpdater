@@ -96,4 +96,5 @@
     <string name="blocked_update_dialog_message">Denne oppdateringen kan ikke installeres med oppdateringsappen. Les <xliff:g id="info_url">%1$s</xliff:g> for mer informasjon.</string>
     <string name="new_updates_channel_title">Nye oppdateringer</string>
     <string name="update_failed_channel_title">Oppdatering feilet</string>
+    <string name="update_button">Check for update</string>
 </resources>

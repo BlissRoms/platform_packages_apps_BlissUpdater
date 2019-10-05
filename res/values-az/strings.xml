@@ -26,4 +26,5 @@
           {type} - Build type
           {incr} - Incremental version
     -->
+    <string name="update_button">Check for update</string>
 </resources>

@@ -121,4 +121,5 @@
     <string name="new_updates_channel_title">Nove posodobitve</string>
     <string name="ongoing_channel_title">Prenosi v teku</string>
     <string name="update_failed_channel_title">Posodobitev je spodletela</string>
+    <string name="update_button">Check for update</string>
 </resources>

@@ -115,4 +115,5 @@
     <string name="new_updates_channel_title">Noves actualitzacions</string>
     <string name="ongoing_channel_title">Baixades en curs</string>
     <string name="update_failed_channel_title">Actualització fallida</string>
+    <string name="update_button">Check for update</string>
 </resources>

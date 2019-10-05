@@ -85,4 +85,5 @@
     <string name="blocked_update_dialog_message">Це оновлення не можна інсталювати за допомогою штатного оновлювача.  Будь ласка, прочитайте <xliff:g id="info_url">%1$s</xliff:g> для отримання додаткової інформації.</string>
     <string name="new_updates_channel_title">Нові оновлення</string>
     <string name="ongoing_channel_title">Поточні завантаження</string>
+    <string name="update_button">Check for update</string>
 </resources>

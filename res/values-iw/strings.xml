@@ -120,4 +120,5 @@
     <string name="new_updates_channel_title">עדכונים חדשים</string>
     <string name="ongoing_channel_title">הורדות בפעולה</string>
     <string name="update_failed_channel_title">העדכון נכשל</string>
+    <string name="update_button">Check for update</string>
 </resources>
