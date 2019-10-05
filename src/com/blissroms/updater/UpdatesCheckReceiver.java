@@ -31,16 +31,13 @@ import android.util.Log;
 import com.blissroms.updater.download.DownloadClient;
 import com.blissroms.updater.misc.Constants;
 import com.blissroms.updater.misc.Utils;
-import com.blissroms.updater.model.UpdateInfo;
 
 import org.json.JSONException;
 import com.blissroms.updater.R;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 import java.util.UUID;
 
 public class UpdatesCheckReceiver extends BroadcastReceiver {

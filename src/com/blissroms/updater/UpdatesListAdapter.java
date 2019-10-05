@@ -31,10 +31,9 @@ import androidx.appcompat.view.menu.MenuBuilder;
 import androidx.appcompat.view.menu.MenuPopupHelper;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.recyclerview.widget.RecyclerView;
-import android.text.SpannableString;
+
 import android.text.format.Formatter;
 import android.text.method.LinkMovementMethod;
-import android.text.util.Linkify;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -594,7 +593,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                     .setPositiveButton(android.R.string.ok, null)
                     .setMessage(result)
                     .show();
-            TextView textView = (TextView) dialog.findViewById(android.R.id.message);
+            TextView textView = dialog.findViewById(android.R.id.message);
             textView.setMovementMethod(LinkMovementMethod.getInstance());
         }
     }

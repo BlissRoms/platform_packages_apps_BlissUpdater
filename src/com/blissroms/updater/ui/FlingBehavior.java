@@ -34,6 +34,7 @@ public final class FlingBehavior extends AppBarLayout.Behavior {
                 consumed);
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public void onNestedPreScroll(CoordinatorLayout coordinatorLayout, AppBarLayout child,
             View target, int dx, int dy, int[] consumed) {
