@@ -154,7 +154,7 @@
     <string name="update_button">Check for update</string>
 
     <!-- Changelog -->
-    <string name="changelog_url" translatable="false">https://downloads.blissroms.com/BlissRoms/Pie/{device}/{changelogversion}.txt</string>
+    <string name="changelog_url" translatable="false">https://downloads.blissroms.com/BlissRoms/{device}/{changelogversion}.txt</string>
     <string name="changelog_fail">Failed to retrieve changelog</string>
 
 </resources>
