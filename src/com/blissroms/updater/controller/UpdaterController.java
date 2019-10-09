@@ -248,7 +248,7 @@ public class UpdaterController {
         new Thread(() -> {
             Update update = mDownloads.get(downloadId).mUpdate;
             File file = update.getFile();
-            if (file.exists() && verifyPackage(file)) {
+            if (file.exists()) {
                 file.setReadable(true, false);
                 update.setPersistentStatus(UpdateStatus.Persistent.VERIFIED);
                 mUpdatesDbHelper.changeUpdateStatus(update);
