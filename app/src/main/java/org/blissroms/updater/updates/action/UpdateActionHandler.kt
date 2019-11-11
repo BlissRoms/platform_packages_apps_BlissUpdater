@@ -139,30 +139,7 @@ class UpdateActionHandler(
 
                     InstallUtils.BlockedReason.VERSION_UNSUPPORTED -> {
                         title = activity.getString(R.string.blocked_update_dialog_title)
-                        val url = activity.getString(
-                            R.string.blocked_update_info_url,
-                            DeviceInfoUtils.device
-                        )
-                        val messageString = String.format(
-                            StringUtil.getCurrentLocale(activity),
-                            activity.getString(R.string.blocked_update_dialog_message),
-                            url
-                        )
-                        message = buildAnnotatedString {
-                            append(messageString)
-                            val urlStart = messageString.indexOf(url)
-                            if (urlStart != -1) {
-                                val urlEnd = urlStart + url.length
-                                addStyle(
-                                    style = SpanStyle(
-                                        textDecoration = TextDecoration.Underline
-                                    ),
-                                    start = urlStart,
-                                    end = urlEnd
-                                )
-                                addLink(LinkAnnotation.Url(url), urlStart, urlEnd)
-                            }
-                        }
+                        message = AnnotatedString(activity.getString(R.string.blocked_update_dialog_message_custom))
                     }
 
                     InstallUtils.BlockedReason.NONE -> return
