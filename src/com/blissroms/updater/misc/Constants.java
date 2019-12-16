@@ -43,7 +43,7 @@ public final class Constants {
     public static final String PROP_DEVICE = "ro.bliss.device";
     public static final String PROP_NEXT_DEVICE = "ro.updater.next_device";
     public static final String PROP_RELEASE_TYPE = "ro.bliss.build.status";
-    public static final String PROP_DISABLE_UNCRYPT = "sys.ota.disable_uncrypt";
+    public static final String PROP_RECOVERY_UPDATE = "persist.sys.recovery_update";
     public static final String PROP_UPDATER_ALLOW_DOWNGRADING = "bliss.updater.allow_downgrading";
     public static final String PROP_UPDATER_URI = "bliss.updater.uri";
     public static final String PROP_CHANGELOG_VERSION = "ro.bliss.changelog.version";
