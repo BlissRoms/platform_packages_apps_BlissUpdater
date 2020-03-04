@@ -296,7 +296,7 @@ public class UpdatesActivity extends UpdatesListActivity {
             preferences.edit().putLong(Constants.PREF_LAST_UPDATE_CHECK, millis).apply();
             updateLastCheckedString();
             if (json.exists() && Utils.isUpdateCheckEnabled(this) &&
-                    Utils.checkForNewUpdates(json, jsonNew)) {
+                    Utils.checkForNewUpdates(json, jsonNew, false)) {
                 UpdatesCheckReceiver.updateRepeatingUpdatesCheck(this);
             }
             // In case we set a one-shot check because of a previous failure

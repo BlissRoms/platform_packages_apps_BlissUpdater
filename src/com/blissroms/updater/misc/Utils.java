@@ -196,8 +196,11 @@ public class Utils {
      * @throws IOException
      * @throws JSONException
      */
-    public static boolean checkForNewUpdates(File oldJson, File newJson)
+    public static boolean checkForNewUpdates(File oldJson, File newJson, boolean fromBoot)
             throws IOException, JSONException {
+        if (!oldJson.exists() || fromBoot){
+            return parseJson(newJson, true) != null;
+        }
         List<UpdateInfo> oldList = parseJson(oldJson, true);
         List<UpdateInfo> newList = parseJson(newJson, true);
         Set<String> oldIds = new HashSet<>();
