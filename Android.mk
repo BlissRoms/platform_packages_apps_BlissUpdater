@@ -24,6 +24,7 @@ LOCAL_RESOURCE_DIR := \
 LOCAL_PACKAGE_NAME := BlissUpdater
 LOCAL_PRIVATE_PLATFORM_APIS := true
 LOCAL_PRIVILEGED_MODULE := true
+LOCAL_CERTIFICATE := platform
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
 LOCAL_REQUIRED_MODULES := privapp_whitelist_com.blissroms.updater.xml
