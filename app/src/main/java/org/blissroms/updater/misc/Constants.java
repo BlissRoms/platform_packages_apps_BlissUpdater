@@ -44,7 +44,6 @@ public final class Constants {
     public static final String PROP_BUILD_VERSION_INCREMENTAL = "ro.build.version.incremental";
     public static final String PROP_DEVICE = "ro.bliss.device";
     public static final String PROP_NEXT_DEVICE = "ro.updater.next_device";
-    public static final String PROP_RELEASE_TYPE = "ro.bliss.releasetype";
     public static final String PROP_UPDATER_ALLOW_DOWNGRADING = "bliss.updater.allow_downgrading";
     public static final String PROP_UPDATER_URI = "bliss.updater.uri";
 
