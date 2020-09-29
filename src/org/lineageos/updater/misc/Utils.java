@@ -87,7 +87,6 @@ public class Utils {
         update.setTimestamp(object.getLong("datetime"));
         update.setName(object.getString("filename"));
         update.setDownloadId(object.getString("id"));
-        update.setType(object.getString("romtype"));
         update.setFileSize(object.getLong("size"));
         update.setDownloadUrl(object.getString("url"));
         update.setVersion(object.getString("version"));
@@ -102,10 +101,6 @@ public class Utils {
         if (!SystemProperties.getBoolean(Constants.PROP_UPDATER_ALLOW_DOWNGRADING, false) &&
                 update.getTimestamp() <= SystemProperties.getLong(Constants.PROP_BUILD_DATE, 0)) {
             Log.d(TAG, update.getName() + " is older than/equal to the current build");
-            return false;
-        }
-        if (!update.getType().equalsIgnoreCase(SystemProperties.get(Constants.PROP_RELEASE_TYPE))) {
-            Log.d(TAG, update.getName() + " has type " + update.getType());
             return false;
         }
         return true;
@@ -151,7 +146,6 @@ public class Utils {
         String incrementalVersion = SystemProperties.get(Constants.PROP_BUILD_VERSION_INCREMENTAL);
         String device = SystemProperties.get(Constants.PROP_NEXT_DEVICE,
                 SystemProperties.get(Constants.PROP_DEVICE));
-        String type = SystemProperties.get(Constants.PROP_RELEASE_TYPE).toLowerCase(Locale.ROOT);
 
         String serverUrl = SystemProperties.get(Constants.PROP_UPDATER_URI);
         if (serverUrl.trim().isEmpty()) {
@@ -159,7 +153,6 @@ public class Utils {
         }
 
         return serverUrl.replace("{device}", device)
-                .replace("{type}", type)
                 .replace("{incr}", incrementalVersion);
     }
 
