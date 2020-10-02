@@ -89,6 +89,7 @@ public class Utils {
         update.setName(object.getString("filename"));
         update.setDownloadId(object.getString("id"));
         update.setType(object.getString("romtype"));
+        update.setVariant(object.getString("variant"));
         update.setFileSize(object.getLong("size"));
         update.setDownloadUrl(object.getString("url"));
         update.setVersion(object.getString("version"));
@@ -107,6 +108,10 @@ public class Utils {
         }
         if (!update.getType().equalsIgnoreCase(SystemProperties.get(Constants.PROP_RELEASE_TYPE))) {
             Log.d(TAG, update.getName() + " has type " + update.getType());
+            return false;
+        }
+        if (!update.getType().equalsIgnoreCase(SystemProperties.get(Constants.PROP_RELEASE_VARIANT))) {
+            Log.d(TAG, update.getName() + " has variant " + update.getVariant());
             return false;
         }
         return true;
@@ -154,6 +159,7 @@ public class Utils {
         String device = SystemProperties.get(Constants.PROP_NEXT_DEVICE,
                 SystemProperties.get(Constants.PROP_DEVICE));
         String type = SystemProperties.get(Constants.PROP_RELEASE_TYPE).toLowerCase(Locale.ROOT);
+        String variant = SystemProperties.get(Constants.PROP_RELEASE_VARIANT).toLowerCase(Locale.ROOT);
 
         String serverUrl = SystemProperties.get(Constants.PROP_UPDATER_URI);
         if (serverUrl.trim().isEmpty()) {
@@ -162,6 +168,7 @@ public class Utils {
 
         return serverUrl.replace("{device}", device)
                 .replace("{type}", type)
+		.replace("{variant}", variant)
                 .replace("{incr}", incrementalVersion);
     }
 
