@@ -24,6 +24,7 @@ public class UpdateBase implements UpdateBaseInfo {
     private String mType;
     private String mVersion;
     private long mFileSize;
+    private String mVariant;
 
     public UpdateBase() {
     }
@@ -36,6 +37,7 @@ public class UpdateBase implements UpdateBaseInfo {
         mType = update.getType();
         mVersion = update.getVersion();
         mFileSize = update.getFileSize();
+        mVariant = update.getVariant();
     }
 
     @Override
@@ -100,4 +102,14 @@ public class UpdateBase implements UpdateBaseInfo {
     public void setFileSize(long fileSize) {
         mFileSize = fileSize;
     }
+
+    @Override
+    public long getVariant() {
+        return mVariant;
+    }
+
+    public void setVariant(String variant) {
+        mVariant = variant;
+    }
+
 }

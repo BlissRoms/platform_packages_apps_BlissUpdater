@@ -24,6 +24,8 @@ public interface UpdateBaseInfo {
 
     String getType();
 
+    String getVariant();
+
     String getVersion();
 
     String getDownloadUrl();
