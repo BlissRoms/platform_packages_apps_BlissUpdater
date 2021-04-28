@@ -148,6 +148,7 @@ public class Utils {
         String incrementalVersion = SystemProperties.get(Constants.PROP_BUILD_VERSION_INCREMENTAL);
         String device = SystemProperties.get(Constants.PROP_NEXT_DEVICE,
                 SystemProperties.get(Constants.PROP_DEVICE));
+        String variant = SystemProperties.get(Constants.PROP_RELEASE_VARIANT);
 
         String serverUrl = SystemProperties.get(Constants.PROP_UPDATER_URI);
         if (serverUrl.trim().isEmpty()) {
@@ -155,7 +156,7 @@ public class Utils {
         }
 
         return serverUrl.replace("{device}", device)
-                .replace("{incr}", incrementalVersion);
+				.replace("{variant}", variant);
     }
 
     public static String getChangelogURL(Context context) {
