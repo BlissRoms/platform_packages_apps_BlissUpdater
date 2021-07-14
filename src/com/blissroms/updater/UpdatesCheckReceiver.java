@@ -93,7 +93,7 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
             @Override
             public void onSuccess(File destination) {
                 try {
-                    if (Utils.checkForNewUpdates(json, jsonNew, true)) {
+                    if (json.exists() && Utils.checkForNewUpdates(json, jsonNew)) {
                         showNotification(context);
                         updateRepeatingUpdatesCheck(context);
                     }
