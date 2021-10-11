@@ -26,6 +26,7 @@
             android:name="com.blissroms.updater.UpdatesActivity"
             android:excludeFromRecents="true"
             android:label="@string/display_name"
+            android:exported="true"
             android:theme="@style/AppTheme.NoActionBar"
             android:launchMode="singleTop">
             <intent-filter android:priority="1">
@@ -49,7 +50,7 @@
             </intent-filter>
         </receiver>
 
-        <receiver android:name="com.blissroms.updater.UpdatesCheckReceiver">
+        <receiver android:name="com.blissroms.updater.UpdatesCheckReceiver" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
