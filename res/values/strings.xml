@@ -15,25 +15,25 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_name">Updater</string>
-    <string name="display_name">Updater</string>
+    <string name="app_name">BlissUpdater</string>
+    <string name="display_name">BlissUpdater</string>
 
     <!-- Directory where the update files will be downloaded and stored.
          WARNING: The application can and will delete any unknown file. -->
-    <string name="download_path" translatable="false">/data/ota_package/</string>
+    <string name="download_path" translatable="false">/data/bliss_updates/</string>
 
     <!-- Directory where the downloads will be exported to.
          The path is relative to the root of the external storage.-->
-    <string name="export_path" translatable="false">POSP updates/</string>
+    <string name="export_path" translatable="false">bliss_updates/</string>
 
     <!--
         Optional placeholders replaced at runtime:
           {device} - Device name
           {type} - Build type
           {incr} - Incremental version
-          TODO: [POSP] Implement incremental support
+          TODO: [BlissRoms] Implement incremental support
     -->
-    <string name="updater_server_url" translatable="false">https://api.potatoproject.co/api/ota/builds/?device={device}&amp;build_type={type}</string>
+    <string name="updater_server_url" translatable="false"></string>
 
     <string name="verification_failed_notification">Verification failed</string>
     <string name="verifying_download_notification">Verifying update</string>
@@ -77,11 +77,9 @@
     <string name="menu_copy_url">Copy URL</string>
     <string name="menu_export_update">Export update</string>
     <string name="menu_show_changelog">Show changelog</string>
-    <string name="menu_changelog_url" translatable="false">https://github.com/PotatoProject/vendor_potato/blob/frico-release/CHANGELOG.md</string>
+    <string name="menu_changelog_url" translatable="false"></string>
     <string name="menu_ab_perf_mode">Prioritize update process</string>
     <string name="menu_update_recovery">Update recovery</string>
-    <string name="menu_update_channel">Update channel</string>
-    <string name="menu_update_channel_apply">Apply</string>
     <string name="toast_forced_update_recovery">It is impossible to disable Lineage Recovery updates on this device.</string>
 
     <string name="snack_updates_found">New update available</string>
@@ -94,13 +92,13 @@
 
     <string name="snack_update_not_installable">This update can\'t be installed on top of the current build.</string>
 
-    <string name="header_title_text">POSP</string>
+    <string name="header_title_text">BlissRoms</string>
     <string name="header_android_version">Android version: <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
     <string name="header_security_patch">Security patch level: <xliff:g id="patch" example="January 5 2019">%1$s</xliff:g></string>
     <string name="header_last_updates_check">Last successful check for update at <xliff:g id="time" example="01:23">%1$s</xliff:g></string>
 
-    <string name="list_build_version">POSP <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
-    <string name="list_build_version_date">POSP <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_build_version">Bliss <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
+    <string name="list_build_version_date">Bliss <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
     <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
     <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
     <string name="list_verifying_update">Verifying update</string>
@@ -159,5 +157,4 @@
 
     <string name="changelog_url" translatable="false">https://github.com/PotatoProject/vendor_potato/blob/frico-release/CHANGELOG.md</string>
     <string name="changelog_fail">Failed to retrieve changelog</string>
-
 </resources>

@@ -62,23 +62,7 @@ public class Utils {
     }
 
     public static File getDownloadPath(Context context) {
-        if (context == null)
-            return null;
-        String downloadPath =
-                SystemProperties.get(getProjectProp(Constants.PROP_DOWNLOAD_PATH));
-        if (downloadPath.trim().isEmpty())
-            downloadPath = context.getString(R.string.download_path);
-        File dir = new File(downloadPath);
-        if (!dir.isDirectory()) {
-            if (dir.exists()) {
-                return null;
-            } else {
-                if (dir.mkdirs()) {
-                    Log.e(TAG, "Failed to create ota_package dir! Is the app privileged?");
-                }
-            }
-        }
-        return dir;
+        return new File(context.getString(R.string.download_path));
     }
 
     public static File getExportPath(Context context) {
@@ -100,27 +84,27 @@ public class Utils {
     // used to initialize UpdateInfo objects
     private static UpdateInfo parseJsonUpdate(JSONObject object) throws JSONException {
         Update update = new Update();
-        update.setTimestamp(object.getLong("build_date"));
+        update.setTimestamp(object.getLong("datetime"));
         update.setName(object.getString("filename"));
-        update.setDownloadId(object.getString("md5"));
-        update.setType(object.getString("build_type"));
+        update.setDownloadId(object.getString("id"));
+        update.setType(object.getString("romtype"));
         update.setFileSize(object.getLong("size"));
         update.setDownloadUrl(object.getString("url"));
         update.setVersion(object.getString("version"));
         return update;
     }
 
-    public static boolean isCompatible(UpdateBaseInfo update, Context context) {
-        if (update.getVersion().compareTo(SystemProperties.get(getProjectProp(Constants.PROP_BUILD_VERSION))) < 0) {
+    public static boolean isCompatible(UpdateBaseInfo update) {
+        if (update.getVersion().compareTo(SystemProperties.get(Constants.PROP_BUILD_VERSION)) < 0) {
             Log.d(TAG, update.getName() + " is older than current Android version");
             return false;
         }
-        if (!SystemProperties.getBoolean(getProjectProp(Constants.PROP_UPDATER_ALLOW_DOWNGRADING), false) &&
+        if (!SystemProperties.getBoolean(Constants.PROP_UPDATER_ALLOW_DOWNGRADING, false) &&
                 update.getTimestamp() <= SystemProperties.getLong(Constants.PROP_BUILD_DATE, 0)) {
             Log.d(TAG, update.getName() + " is older than/equal to the current build");
             return false;
         }
-        if (!update.getType().equalsIgnoreCase(getReleaseType(context))) {
+        if (!update.getType().equalsIgnoreCase(SystemProperties.get(Constants.PROP_RELEASE_TYPE))) {
             Log.d(TAG, update.getName() + " has type " + update.getType());
             return false;
         }
@@ -131,7 +115,7 @@ public class Utils {
         return (update.getTimestamp() > SystemProperties.getLong(Constants.PROP_BUILD_DATE, 0));
     }
 
-    public static List<UpdateInfo> parseJson(File file, boolean compatibleOnly, Context context)
+    public static List<UpdateInfo> parseJson(File file, boolean compatibleOnly)
             throws IOException, JSONException {
         List<UpdateInfo> updates = new ArrayList<>();
 
@@ -143,14 +127,14 @@ public class Utils {
         }
 
         JSONObject obj = new JSONObject(json);
-        JSONArray updatesList = obj.getJSONArray("results");
+        JSONArray updatesList = obj.getJSONArray("response");
         for (int i = 0; i < updatesList.length(); i++) {
             if (updatesList.isNull(i)) {
                 continue;
             }
             try {
                 UpdateInfo update = parseJsonUpdate(updatesList.getJSONObject(i));
-                if (!compatibleOnly || isCompatible(update, context)) {
+                if (!compatibleOnly || isCompatible(update)) {
                     updates.add(update);
                 } else {
                     Log.d(TAG, "Ignoring incompatible update " + update.getName());
@@ -166,10 +150,10 @@ public class Utils {
     public static String getServerURL(Context context) {
         String incrementalVersion = SystemProperties.get(Constants.PROP_BUILD_VERSION_INCREMENTAL);
         String device = SystemProperties.get(Constants.PROP_NEXT_DEVICE,
-                SystemProperties.get(getProjectProp(Constants.PROP_DEVICE)));
-        String type = getReleaseType(context);
+                SystemProperties.get(Constants.PROP_DEVICE));
+        String type = SystemProperties.get(Constants.PROP_RELEASE_TYPE).toLowerCase(Locale.ROOT);
 
-        String serverUrl = SystemProperties.get(getProjectProp(Constants.PROP_UPDATER_URI));
+        String serverUrl = SystemProperties.get(Constants.PROP_UPDATER_URI);
         if (serverUrl.trim().isEmpty()) {
             serverUrl = context.getString(R.string.updater_server_url);
         }
@@ -179,12 +163,10 @@ public class Utils {
                 .replace("{incr}", incrementalVersion);
     }
 
-    static String getProjectProp(String prop) {
-            return prop.replace("{project}", SystemProperties.get(Constants.PROP_PROJECT_NAME));
-    }
-
     public static String getUpgradeBlockedURL(Context context) {
-        return context.getString(R.string.blocked_update_dialog_message);
+        String device = SystemProperties.get(Constants.PROP_NEXT_DEVICE,
+                SystemProperties.get(Constants.PROP_DEVICE));
+        return context.getString(R.string.blocked_update_dialog_message, device);
     }
 
     public static String getChangelogURL(Context context) {
@@ -222,10 +204,10 @@ public class Utils {
      * @throws IOException
      * @throws JSONException
      */
-    public static boolean checkForNewUpdates(File oldJson, File newJson, Context context)
+    public static boolean checkForNewUpdates(File oldJson, File newJson)
             throws IOException, JSONException {
-        List<UpdateInfo> oldList = parseJson(oldJson, true, context);
-        List<UpdateInfo> newList = parseJson(newJson, true, context);
+        List<UpdateInfo> oldList = parseJson(oldJson, true);
+        List<UpdateInfo> newList = parseJson(newJson, true);
         Set<String> oldIds = new HashSet<>();
         for (UpdateInfo update : oldList) {
             oldIds.add(update.getDownloadId());
@@ -412,33 +394,6 @@ public class Utils {
                 return AlarmManager.INTERVAL_DAY * 7;
             case Constants.AUTO_UPDATES_CHECK_INTERVAL_MONTHLY:
                 return AlarmManager.INTERVAL_DAY * 30;
-        }
-    }
-
-    public static String getDevice(Context context) {
-        return SystemProperties.get(getProjectProp(Constants.PROP_DEVICE));
-    }
-
-    public static String getModel() {
-        return SystemProperties.get(Constants.PROP_MODEL);
-    }
-
-    public static String getReleaseType(Context context) {
-        String type = PreferenceManager.getDefaultSharedPreferences(context)
-                .getString(Constants.PREF_RELEASE_TYPE, Constants.DEFAULT_RELEASE_TYPE);
-        if (type == null || type.equals(Constants.DEFAULT_RELEASE_TYPE)) {
-            return SystemProperties.get(getProjectProp(Constants.PROP_RELEASE_TYPE)).toLowerCase(Locale.ROOT);
-        } else {
-            return type.toLowerCase(Locale.ROOT);
-        }
-    }
-
-    public static void setReleaseType(Context context, String type) {
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        if (type == null) {
-            preferences.edit().remove(Constants.PREF_RELEASE_TYPE).apply();
-        } else {
-            preferences.edit().putString(Constants.PREF_RELEASE_TYPE, type).apply();
         }
     }
 
