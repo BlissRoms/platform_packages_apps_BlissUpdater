@@ -33,7 +33,7 @@ android {
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "org.lineageos.updater"
+        applicationId = "org.blissroms.updater"
         minSdk = 30
         targetSdk = 33
         versionCode = 1
