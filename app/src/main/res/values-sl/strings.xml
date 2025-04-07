@@ -134,4 +134,6 @@
     <string name="local_update_import_failure">Uvoz lokalne posodobitve je spodletel</string>
     <string name="local_update_import_install">Namesti</string>
     <string name="local_update_name">Lokalna posodobitev</string>
+    <string name="welcome_title">Dobrodošli</string>
+    <string name="welcome_message">Vedite, da, ko je na voljo več posodobitev, ni potrebno namestiti vsake, vedno lahko neposredno namestite zadnjo in nato varno izbrišete stare posodobitve, da sprostite prostor na pomnilniku.</string>
 </resources>

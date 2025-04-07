@@ -134,4 +134,6 @@
     <string name="local_update_import_failure">Nie udało się zaimportować aktualizacji lokalnej</string>
     <string name="local_update_import_install">Zainstaluj</string>
     <string name="local_update_name">Aktualizacja lokalna</string>
+    <string name="welcome_title">Witaj</string>
+    <string name="welcome_message">Pamiętaj, że gdy dostępne są wielokrotne aktualizacje, nie ma potrzeby aktualizować po aktualizacji, zawsze możesz zainstalować najnowszą wersję bezpośrednio, a następnie bezpiecznie usuwać stare aktualizacje, aby zwolnić miejsce w pamięci.</string>
 </resources>

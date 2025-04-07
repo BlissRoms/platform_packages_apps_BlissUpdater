@@ -129,4 +129,6 @@ illetve, ha éppen tölt, akkor még <xliff:g id="percent_charging">%2$d</xliff:
     <string name="local_update_import_failure">Nem sikerült importálni a helyi frissítést</string>
     <string name="local_update_import_install">Telepítés</string>
     <string name="local_update_name">Helyi frissítés</string>
+    <string name="welcome_title">Üdvözöljük</string>
+    <string name="welcome_message">Vegye figyelembe, hogy ha több frissítés is elérhető, nem szükséges mindet telepítenie, csak kizárólag a legfrissebbet, majd biztonságosan törölheti a régi frissítéseket, hogy tárhelyet szabadítson fel.</string>
 </resources>

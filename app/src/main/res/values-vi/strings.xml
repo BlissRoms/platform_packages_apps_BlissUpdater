@@ -125,4 +125,6 @@
     <string name="local_update_import_failure">Không nhập được bản cập nhật cục bộ</string>
     <string name="local_update_import_install">Cài đặt</string>
     <string name="local_update_name">Cập nhật cục bộ</string>
+    <string name="welcome_title">Chào mừng</string>
+    <string name="welcome_message">Xin lưu ý rằng khi có nhiều bản cập nhật khả dụng, bạn không cần phải cập nhật từng bản một. Bạn có thể cài đặt trực tiếp bản cập nhật mới nhất rồi xóa an toàn các bản cập nhật cũ hơn để giải phóng dung lượng lưu trữ.</string>
 </resources>

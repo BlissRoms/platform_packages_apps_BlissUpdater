@@ -128,4 +128,6 @@
     <string name="local_update_import_failure">Error al importar actualización local</string>
     <string name="local_update_import_install">Instalar</string>
     <string name="local_update_name">Actualización local</string>
+    <string name="welcome_title">Te damos la bienvenida</string>
+    <string name="welcome_message">Ten en cuenta que cuando hay varias actualizaciones disponibles, no es necesario actualizar una tras otra, siempre puedes instalar la más reciente directamente y luego eliminar de forma segura las actualizaciones antiguas para liberar espacio de almacenamiento.</string>
 </resources>

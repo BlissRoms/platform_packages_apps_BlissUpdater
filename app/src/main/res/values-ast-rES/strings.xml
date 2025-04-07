@@ -128,4 +128,6 @@
     <string name="local_update_import_failure">Hebo un fallu al importar l\'anovamientu llocal</string>
     <string name="local_update_import_install">Instalar</string>
     <string name="local_update_name">Anovamientu llocal</string>
+    <string name="welcome_title">Afáyate</string>
+    <string name="welcome_message">Decátate que cuando hai múltiples anovamientos disponibles nun ye necesario instalalos unu a unu, siempre pues instalar l\'últimu direutamente y desaniciar los antiguos pa lliberar espaciu d\'almacenamientu.</string>
 </resources>

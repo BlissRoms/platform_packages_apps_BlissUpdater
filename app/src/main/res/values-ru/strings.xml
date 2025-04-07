@@ -134,4 +134,6 @@
     <string name="local_update_import_failure">Не удалось импортировать локальное обновление</string>
     <string name="local_update_import_install">Установить</string>
     <string name="local_update_name">Локальное обновление</string>
+    <string name="welcome_title">Добро пожаловать!</string>
+    <string name="welcome_message">Пожалуйста, обратите внимание, что при наличии нескольких обновлений нет необходимости переходить от одного обновления к другому. Вы всегда можете установить последнее, а затем безопасно удалить старые обновления, чтобы освободить место.</string>
 </resources>

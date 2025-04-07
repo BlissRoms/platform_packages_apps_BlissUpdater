@@ -137,4 +137,6 @@
     <string name="local_update_import_failure">Theip ar iompórtáil an nuashonrú áitiúil</string>
     <string name="local_update_import_install">Suiteáil</string>
     <string name="local_update_name">Nuashonrú áitiúil</string>
+    <string name="welcome_title">Fáilte</string>
+    <string name="welcome_message">Tabhair faoi deara le do thoil, nuair a bhíonn nuashonruithe iolracha ar fáil, níl aon ghá le nuashonrú ar nuashonrú, is féidir leat an ceann is déanaí a shuiteáil go díreach i gcónaí, agus ansin sean-nuashonruithe a scriosadh go sábháilte chun spás stórála a shaoradh.</string>
 </resources>

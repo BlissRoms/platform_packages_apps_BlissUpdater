@@ -125,4 +125,6 @@
     <string name="local_update_import_failure">导入本地更新失败</string>
     <string name="local_update_import_install">安装</string>
     <string name="local_update_name">本地更新</string>
+    <string name="welcome_title">欢迎</string>
+    <string name="welcome_message">请注意，当有多个更新可用时，无需逐个更新，可以直接安装最新的更新，然后安全地删除旧的更新以释放存储空间。</string>
 </resources>

@@ -125,4 +125,6 @@
     <string name="local_update_import_failure">ローカルアップデートのインポートに失敗しました</string>
     <string name="local_update_import_install">インストール</string>
     <string name="local_update_name">ローカルアップデート</string>
+    <string name="welcome_title">ようこそ</string>
+    <string name="welcome_message">複数のアップデートが利用可能な場合、順番にアップデートする必要はありません。 古いアップデートは削除してストレージ容量を空けて、最新のアップデートだけをインストールしてください。</string>
 </resources>

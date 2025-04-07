@@ -128,4 +128,6 @@
     <string name="local_update_import_failure">No s\'ha pogut importar l\'actualització local</string>
     <string name="local_update_import_install">Instal·la</string>
     <string name="local_update_name">Actualització local</string>
+    <string name="welcome_title">Us donem la benvinguda</string>
+    <string name="welcome_message">Tingueu en compte que quan hi ha diverses actualitzacions disponibles, no cal instal·lar actualització a actualització, sempre podeu instal·lar l\'última directament i a continuació, suprimir les actualitzacions antigues de manera segura per alliberar espai.</string>
 </resources>

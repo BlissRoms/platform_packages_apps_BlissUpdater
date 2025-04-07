@@ -128,4 +128,6 @@
     <string name="local_update_import_failure">Importazion inzornament locâl falide</string>
     <string name="local_update_import_install">Instale</string>
     <string name="local_update_name">Inzornament locâl</string>
+    <string name="welcome_title">Benvignûts</string>
+    <string name="welcome_message">Fâs câs che cuant che a son disponibii plui inzornaments, no covente inzornâ in progression l\'un dal un, tu puedis simpri instalâ daurman l\'ultin e dopo eliminâ in sigurece i inzornaments vieris par liberâ spazi di archiviazion.</string>
 </resources>

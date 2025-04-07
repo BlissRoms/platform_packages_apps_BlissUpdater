@@ -128,4 +128,6 @@
     <string name="local_update_import_failure">به‌روزرسانی داخلی با شکست مواجه شد</string>
     <string name="local_update_import_install">نصب</string>
     <string name="local_update_name">به‌روزرسانی داخلی</string>
+    <string name="welcome_title">خوش آمدید</string>
+    <string name="welcome_message">لطفاً توجه داشته باشید که وقتی چندین به‌روزرسانی موجود است، نیازی به نصب تک‌به‌تک آنها نیست. شما می‌توانید به‌طور مستقیم جدیدترین به‌روزرسانی را نصب کنید و سپس با خیال راحت، به‌روزرسانی‌های قدیمی‌تر را حذف کنید تا فضای ذخیره‌سازی آزاد شود.</string>
 </resources>

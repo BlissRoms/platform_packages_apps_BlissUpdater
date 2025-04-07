@@ -128,4 +128,6 @@
     <string name="local_update_import_failure">Importazione aggiornamento locale fallita</string>
     <string name="local_update_import_install">Installa</string>
     <string name="local_update_name">Aggiornamento locale</string>
+    <string name="welcome_title">Benvenuto</string>
+    <string name="welcome_message">Quando sono disponibili più aggiornamenti, non c\'è bisogno di installarli tutti: è sempre possibile installare direttamente quello più recente, e quindi eliminare in modo sicuro i vecchi aggiornamenti per liberare spazio di archiviazione.</string>
 </resources>

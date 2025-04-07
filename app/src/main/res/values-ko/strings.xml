@@ -125,4 +125,6 @@
     <string name="local_update_import_failure">로컬 업데이트를 가져오지 못했습니다.</string>
     <string name="local_update_import_install">설치</string>
     <string name="local_update_name">로컬 업데이트</string>
+    <string name="welcome_title">환영합니다</string>
+    <string name="welcome_message">여러 버전의 업데이트가 있을 때, 모든 업데이트를 하나하나 설치할 필요는 없습니다. 가장 마지막 업데이트만 설치한 다음 오래된 업데이트 파일은 삭제하여 저장소 공간을 확보할 수 있습니다.</string>
 </resources>

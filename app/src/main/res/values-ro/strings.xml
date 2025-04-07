@@ -131,4 +131,6 @@
     <string name="local_update_import_failure">Eroare la importarea actualizării locale</string>
     <string name="local_update_import_install">Instalați</string>
     <string name="local_update_name">Actualizare locală</string>
+    <string name="welcome_title">Bun venit</string>
+    <string name="welcome_message">Vă rugăm să rețineți că, atunci când sunt disponibile mai multe actualizări, nu este nevoie să treceți prin fiecare dintre ele, ci puteți instala întotdeauna cea mai recentă în mod direct și apoi să ștergeți în siguranță actualizările vechi pentru a elibera spațiul de stocare.</string>
 </resources>
