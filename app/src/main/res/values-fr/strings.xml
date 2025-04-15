@@ -128,4 +128,6 @@
     <string name="local_update_import_failure">Impossible d\'importer la mise à jour locale</string>
     <string name="local_update_import_install">Installer</string>
     <string name="local_update_name">Mise à jour locale</string>
+    <string name="welcome_title">Bienvenue</string>
+    <string name="welcome_message">Veuillez noter que lorsqu\'il y a plusieurs mises à jour disponibles, il n\'est pas nécessaire de les installer une par une : vous pouvez toujours installer directement la plus récente, puis supprimer en toute sécurité les anciennes mises à jour pour libérer de l\'espace de stockage.</string>
 </resources>
