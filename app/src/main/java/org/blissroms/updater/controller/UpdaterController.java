@@ -8,6 +8,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.wifi.WifiManager;
 import android.os.PowerManager;
 import android.os.SystemClock;
 import android.util.Log;
@@ -49,6 +50,7 @@ public class UpdaterController {
     private final UpdatesDbHelper mUpdatesDbHelper;
 
     private final PowerManager.WakeLock mWakeLock;
+    private final WifiManager.WifiLock mWifiLock;
 
     private final File mDownloadRoot;
 
@@ -69,6 +71,12 @@ public class UpdaterController {
         PowerManager powerManager = context.getSystemService(PowerManager.class);
         mWakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "Updater:wakelock");
         mWakeLock.setReferenceCounted(false);
+        WifiManager wifiManager = context.getSystemService(WifiManager.class);
+        // Keep Wi-Fi radio fully powered while downloading; otherwise the socket
+        // stalls the moment the screen turns off and the radio enters power save.
+        mWifiLock = wifiManager.createWifiLock(
+                WifiManager.WIFI_MODE_FULL_HIGH_PERF, "Updater:wifilock");
+        mWifiLock.setReferenceCounted(false);
         mContext = context.getApplicationContext();
 
         Utils.cleanupDownloadsDir(context);
@@ -118,7 +126,12 @@ public class UpdaterController {
 
     private void tryReleaseWakelock() {
         if (!hasActiveDownloads()) {
-            mWakeLock.release();
+            if (mWakeLock.isHeld()) {
+                mWakeLock.release();
+            }
+            if (mWifiLock.isHeld()) {
+                mWifiLock.release();
+            }
         }
     }
 
@@ -381,6 +394,7 @@ public class UpdaterController {
         notifyUpdateChange(downloadId);
         downloadClient.start();
         mWakeLock.acquire();
+        mWifiLock.acquire();
     }
 
     @SuppressLint("WakelockTimeout")
@@ -428,6 +442,7 @@ public class UpdaterController {
             notifyUpdateChange(downloadId);
             downloadClient.resume();
             mWakeLock.acquire();
+            mWifiLock.acquire();
         }
     }
 
