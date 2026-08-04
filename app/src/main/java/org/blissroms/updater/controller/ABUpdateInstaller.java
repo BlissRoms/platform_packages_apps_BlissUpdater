@@ -149,6 +149,8 @@ class ABUpdateInstaller {
     private void applyPerformanceMode(boolean userPreferenceEnabled) {
         try {
             mUpdateEngine.setPerformanceMode(shouldEnablePerformanceMode(userPreferenceEnabled));
+        } catch (ServiceSpecificException e) {
+            Log.e(TAG, "Failed to enable performance mode. Verify that kernel has CFQ enabled");
         } catch (Throwable e) {
             Log.w(TAG, "Could not set performance mode", e);
         }
