@@ -24,7 +24,7 @@ class UpdatesNetworkDataSource(private val context: Context) {
             }
             return base
                 .replace("{device}", DeviceInfoUtils.device)
-                .replace("{incr}", DeviceInfoUtils.buildVersionIncremental)
+                .replace("{variant}", DeviceInfoUtils.releaseVariant)
         }
 
     private val client = OkHttpClient.Builder()
