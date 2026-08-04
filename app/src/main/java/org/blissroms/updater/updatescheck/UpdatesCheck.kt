@@ -16,6 +16,22 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.navigationBarsPadding
+import androidx.compose.foundation.background
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.Icon
+import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Close
+import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.MaterialTheme
@@ -33,14 +49,17 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.airbnb.lottie.compose.LottieConstants
 import com.android.settingslib.spa.framework.theme.SettingsDimension
-import com.android.settingslib.spa.widget.ui.SettingsBody
 import kotlinx.coroutines.delay
 import org.blissroms.updater.R
-import org.blissroms.updater.ui.Lottie
+import org.blissroms.updater.deviceinfo.DeviceInfoUtils
+import org.blissroms.updater.updates.action.UpdateAction
+import org.blissroms.updater.updates.state.ProgressState
+import org.blissroms.updater.updates.state.UpdateItemState
+import androidx.compose.ui.draw.clip
 import java.util.Date
 
 private const val MIN_CHECKING_DURATION_MILLIS = 2_000L
@@ -76,7 +95,15 @@ class UpdatesCheckUiState internal constructor(
 fun UpdatesCheck(
     model: UpdatesCheckModel,
     uiState: UpdatesCheckUiState,
+    updateZipName: String?,
+    primaryUpdate: UpdateItemState? = null,
+    onPrimaryAction: ((UpdateAction, String) -> Unit)? = null,
+    isWhatsNewVisible: Boolean = false,
+    isInstallFailed: Boolean = false,
+    isDownloadFailed: Boolean = false,
+    isNoUpdatesFound: Boolean = false,
     onCheckClick: () -> Unit,
+    onWhatsNewClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val context = LocalContext.current
@@ -87,83 +114,179 @@ fun UpdatesCheck(
     Column(
         modifier = modifier
             .fillMaxWidth()
+            .navigationBarsPadding()
             .padding(SettingsDimension.itemPadding),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(SettingsDimension.itemPaddingVertical),
     ) {
-        when (uiState.displayedState) {
-            UpdatesCheckState.Idle -> Unit
-            UpdatesCheckState.Checking -> StatusContent(
-                R.raw.sysupdater_progress,
-                R.string.checking_for_updates,
-            )
+        if (!isWhatsNewVisible) {
+            Column(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalAlignment = Alignment.Start
+            ) {
+                Text(
+                    text = stringResource(R.string.software_version),
+                    style = MaterialTheme.typography.titleLarge,
+                    color = MaterialTheme.colorScheme.onSurface,
+                    fontWeight = FontWeight.SemiBold,
+                )
+                
+                Spacer(modifier = Modifier.height(4.dp))
 
-            UpdatesCheckState.NoInternet -> StatusContent(
-                R.raw.sysupdater_error,
-                R.string.check_your_internet_connection,
-                iterations = 1,
-            )
+                Text(
+                    text = updateZipName?.removeSuffix(".zip") ?: DeviceInfoUtils.blissBuild,
+                    style = MaterialTheme.typography.bodyLarge,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
 
-            UpdatesCheckState.Error -> StatusContent(
-                R.raw.sysupdater_error,
-                R.string.updates_check_failed,
-                iterations = 1,
-            )
+                Spacer(modifier = Modifier.height(4.dp))
+
+                Text(
+                    text = lastCheckedText,
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+
+                Spacer(modifier = Modifier.height(16.dp))
+            }
         }
 
-        if (model.canCheckForUpdates && uiState.displayedState !is UpdatesCheckState.Checking) {
-            CheckForUpdatesButton(onClick = onCheckClick)
-        }
+        val isChecking = uiState.displayedState == UpdatesCheckState.Checking
+        val isCheckFailed = uiState.displayedState == UpdatesCheckState.Error || uiState.displayedState == UpdatesCheckState.NoInternet
 
-        Text(
-            text = lastCheckedText,
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(end = SettingsDimension.itemPaddingEnd),
-            style = MaterialTheme.typography.bodyMedium,
-            textAlign = TextAlign.End,
+        CheckForUpdatesButton(
+            showCheckButton = true,
+            isChecking = isChecking,
+            primaryUpdate = primaryUpdate,
+            onPrimaryAction = onPrimaryAction,
+            isWhatsNewVisible = isWhatsNewVisible,
+            isInstallFailed = isInstallFailed,
+            isDownloadFailed = isDownloadFailed,
+            isNoUpdatesFound = isNoUpdatesFound,
+            isCheckFailed = isCheckFailed,
+            onClick = {
+                if (uiState.displayedState == UpdatesCheckState.NoInternet) {
+                    android.widget.Toast.makeText(context, R.string.check_your_internet_connection, android.widget.Toast.LENGTH_SHORT).show()
+                }
+                onCheckClick()
+            },
+            onWhatsNewClick = onWhatsNewClick
         )
     }
 }
 
 @Composable
 private fun CheckForUpdatesButton(
+    showCheckButton: Boolean,
+    isChecking: Boolean,
+    primaryUpdate: UpdateItemState? = null,
+    onPrimaryAction: ((UpdateAction, String) -> Unit)? = null,
+    isWhatsNewVisible: Boolean,
+    isInstallFailed: Boolean = false,
+    isDownloadFailed: Boolean = false,
+    isNoUpdatesFound: Boolean = false,
+    isCheckFailed: Boolean = false,
     onClick: () -> Unit,
+    onWhatsNewClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    FilledTonalButton(
-        onClick = onClick,
+    val context = LocalContext.current
+    Row(
         modifier = modifier.fillMaxWidth(),
-        colors = ButtonDefaults.filledTonalButtonColors(
-            containerColor = MaterialTheme.colorScheme.surfaceContainerHighest,
-        ),
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
+        verticalAlignment = Alignment.CenterVertically
     ) {
-        Text(text = stringResource(R.string.check_for_updates))
-    }
-}
+        if (showCheckButton) {
+            val isFailed = isInstallFailed || isDownloadFailed || isCheckFailed
+            val primaryAction = primaryUpdate?.actions?.primary
 
-/**
- * Shows the animated status illustration and its matching message.
- */
-@Composable
-private fun StatusContent(
-    @RawRes animationResId: Int,
-    @StringRes textResId: Int,
-    iterations: Int = LottieConstants.IterateForever,
-) {
-    val text = stringResource(textResId)
-    Column(
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(SettingsDimension.itemPaddingVertical),
-    ) {
-        Lottie(
-            resId = animationResId,
+            if (primaryUpdate != null && primaryAction != null) {
+                val progress = primaryUpdate.progress
+                val percent = if (progress is ProgressState.Determinate) progress.percent / 100f else 0f
+                val buttonText = when (progress) {
+                    is ProgressState.Determinate -> "Downloading ${"%.1f".format(progress.percent)}%"
+                    else -> primaryAction.type.title(context)
+                }
+
+                Box(
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(48.dp)
+                        .clip(CircleShape)
+                        .background(MaterialTheme.colorScheme.surfaceContainerHighest)
+                        .clickable(enabled = primaryAction.enabled && !isChecking) {
+                            onPrimaryAction?.invoke(primaryAction, primaryUpdate.downloadId)
+                        }
+                ) {
+                    if (progress is ProgressState.Determinate) {
+                        Box(
+                            modifier = Modifier
+                                .fillMaxHeight()
+                                .fillMaxWidth(percent)
+                                .background(MaterialTheme.colorScheme.primaryContainer)
+                        )
+                    } else if (progress is ProgressState.Indeterminate || isChecking) {
+                        Box(
+                            modifier = Modifier
+                                .fillMaxHeight()
+                                .fillMaxWidth()
+                                .background(MaterialTheme.colorScheme.primaryContainer)
+                        )
+                    }
+                    Text(
+                        text = if (isChecking) stringResource(R.string.check_for_updates) else buttonText,
+                        modifier = Modifier.align(Alignment.Center),
+                        color = MaterialTheme.colorScheme.onSurface,
+                        fontWeight = FontWeight.Medium
+                    )
+                }
+            } else {
+                FilledTonalButton(
+                    onClick = onClick,
+                    enabled = !isChecking,
+                    modifier = Modifier.weight(1f),
+                    colors = ButtonDefaults.filledTonalButtonColors(
+                        containerColor = if (isFailed) androidx.compose.ui.graphics.Color.Red else MaterialTheme.colorScheme.surfaceContainerHighest,
+                        contentColor = if (isFailed) androidx.compose.ui.graphics.Color.White else MaterialTheme.colorScheme.onSurface,
+                    ),
+                ) {
+                    if (isChecking) {
+                        CircularProgressIndicator(
+                            modifier = Modifier.size(24.dp),
+                            strokeWidth = 2.dp,
+                            color = MaterialTheme.colorScheme.onSurface
+                        )
+                    } else {
+                        val textRes = when {
+                            isInstallFailed -> R.string.failed_to_install
+                            isDownloadFailed -> R.string.failed_to_download
+                            isNoUpdatesFound -> R.string.no_updates_found
+                            isCheckFailed -> R.string.updates_check_failed
+                            else -> R.string.check_for_updates
+                        }
+                        Text(text = stringResource(textRes))
+                    }
+                }
+            }
+        } else {
+            Spacer(modifier = Modifier.weight(1f))
+        }
+
+        IconButton(
+            onClick = onWhatsNewClick,
             modifier = Modifier
-                .size(AnimationSize)
-                .semantics { contentDescription = text },
-            iterations = iterations,
-        )
-        SettingsBody(text)
+                .size(48.dp)
+                .background(
+                    color = MaterialTheme.colorScheme.surfaceContainerHighest,
+                    shape = CircleShape
+                )
+        ) {
+            Icon(
+                imageVector = if (isWhatsNewVisible) Icons.Default.Close else Icons.Default.Menu,
+                contentDescription = if (isWhatsNewVisible) stringResource(R.string.close) else stringResource(R.string.whats_new),
+                tint = MaterialTheme.colorScheme.onSurface
+            )
+        }
     }
 }
 

@@ -61,6 +61,28 @@ public class UpdateImporter {
         return onPicked(data.getData());
     }
 
+    @SuppressLint("Range")
+    private String getFileName(Uri uri) {
+        String result = null;
+        if (uri.getScheme() != null && uri.getScheme().equals("content")) {
+            try (android.database.Cursor cursor = activity.getContentResolver().query(uri, null, null, null, null)) {
+                if (cursor != null && cursor.moveToFirst()) {
+                    result = cursor.getString(cursor.getColumnIndex(android.provider.OpenableColumns.DISPLAY_NAME));
+                }
+            }
+        }
+        if (result == null) {
+            result = uri.getPath();
+            if (result != null) {
+                int cut = result.lastIndexOf('/');
+                if (cut != -1) {
+                    result = result.substring(cut + 1);
+                }
+            }
+        }
+        return result;
+    }
+
     @SuppressWarnings("ResultOfMethodCallIgnored")
     private boolean onPicked(Uri uri) {
         callbacks.onImportStarted();
@@ -68,10 +90,15 @@ public class UpdateImporter {
         workingThread = new Thread(() -> {
             File importedFile = null;
             try {
+                String originalName = getFileName(uri);
+                if (originalName == null || originalName.isEmpty()) {
+                    originalName = activity.getString(R.string.local_update_name);
+                }
+
                 importedFile = importFile(uri);
                 verifyPackage(importedFile);
 
-                final Update update = buildLocalUpdate(importedFile);
+                final Update update = buildLocalUpdate(importedFile, originalName);
                 addUpdate(update);
                 activity.runOnUiThread(() -> callbacks.onImportCompleted(update));
             } catch (Exception e) {
@@ -121,18 +148,17 @@ public class UpdateImporter {
         return outFile;
     }
 
-    private Update buildLocalUpdate(File file) throws IOException {
+    private Update buildLocalUpdate(File file, String originalName) throws IOException {
         final OtaMetadataParser metadata = new OtaMetadataParser(file);
-        final String name = activity.getString(R.string.local_update_name);
         return new Update.Builder()
-            .setName(name)
+            .setName(originalName)
             .setFile(file)
             .setFileSize(file.length())
             .setTimestamp(metadata.getTimestamp())
             .setOsPatchLevel(metadata.getSecurityPatchLevel())
             .setOsSdkLevel(metadata.getSdkLevel())
             .setStatus(UpdateStatus.VERIFIED)
-            .setVersion(name)
+            .setVersion(originalName)
             .build();
     }
 

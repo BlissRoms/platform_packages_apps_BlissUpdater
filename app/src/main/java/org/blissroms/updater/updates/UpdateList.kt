@@ -23,17 +23,12 @@ import org.blissroms.updater.updates.state.UpdateItemState
 @Composable
 fun UpdateList(
     items: List<UpdateItemState>,
-    isUpdatesCheckStatusVisible: Boolean,
+    isCheckFailed: Boolean,
+    isInstallFailed: Boolean = false,
     onAction: (UpdateAction, String) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     if (items.isEmpty()) {
-        if (!isUpdatesCheckStatusVisible) {
-            UpdateZeroStatePreference(
-                text = stringResource(R.string.updates_zero_state_title),
-                description = stringResource(R.string.updates_zero_state_description),
-            )
-        }
         return
     }
 

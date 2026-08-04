@@ -13,6 +13,7 @@ object DeviceInfoUtils : SettingsLibDeviceInfoUtils() {
 
     private const val PROP_AB_DEVICE = "ro.build.ab_update"
     private const val PROP_ALLOW_MAJOR_UPGRADES = "lineage.updater.allow_major_upgrades"
+    private const val PROP_BLISS_BUILD = "ro.bliss.build"
     private const val PROP_BUILD_DATE = "ro.build.date.utc"
     private const val PROP_BUILD_VERSION = "ro.bliss.version"
     private const val PROP_BUILD_VERSION_INCREMENTAL = "ro.build.version.incremental"
@@ -32,6 +33,9 @@ object DeviceInfoUtils : SettingsLibDeviceInfoUtils() {
 
     @JvmStatic
     val buildDateTimestamp: Long = SystemProperties.getLong(PROP_BUILD_DATE, 0)
+
+    @JvmStatic
+    val blissBuild: String = SystemProperties.get(PROP_BLISS_BUILD, "")
 
     @JvmStatic
     val buildVersion: String = SystemProperties.get(PROP_BUILD_VERSION, "")

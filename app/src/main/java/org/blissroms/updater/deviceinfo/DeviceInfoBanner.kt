@@ -19,7 +19,12 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.material3.Text
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.ui.unit.dp
 import com.android.settingslib.spa.debug.UiModePreviews
 import com.android.settingslib.spa.framework.theme.SettingsDimension
 import com.android.settingslib.spa.framework.theme.SettingsRadius
@@ -31,7 +36,10 @@ import org.blissroms.updater.util.StringUtil
 import java.util.Date
 
 @Composable
-fun DeviceInfoBanner(modifier: Modifier = Modifier) {
+fun DeviceInfoBanner(
+    updateZipName: String?,
+    modifier: Modifier = Modifier
+) {
     val context = LocalContext.current
     val configuration = LocalConfiguration.current
     val locale = remember(context, configuration.locales) { StringUtil.getCurrentLocale(context) }
@@ -42,15 +50,16 @@ fun DeviceInfoBanner(modifier: Modifier = Modifier) {
             .apply { timeZone = TimeZone.getTimeZone("UTC") }
             .format(Date(DeviceInfoUtils.buildDateTimestamp * 1000L))
     }
-    val securityPatch = remember(locale) {
-        StringUtil.formatSecurityPatch(context, DeviceInfoUtils.buildSecurityPatch)
-    }
+
+    val deviceCodename = remember { DeviceInfoUtils.device }
 
     DeviceInfoBanner(
         buildVersion = buildVersion,
         androidVersion = androidVersion,
         buildDate = buildDate,
-        securityPatch = securityPatch,
+
+        deviceCodename = deviceCodename,
+        updateZipName = updateZipName,
         modifier = modifier,
     )
 }
@@ -60,7 +69,8 @@ fun DeviceInfoBanner(
     buildVersion: String,
     androidVersion: String,
     buildDate: String,
-    securityPatch: String,
+    deviceCodename: String,
+    updateZipName: String?,
     modifier: Modifier = Modifier,
 ) {
     val uiMode = LocalConfiguration.current.uiMode
@@ -75,24 +85,11 @@ fun DeviceInfoBanner(
             buildVersion = buildVersion,
             androidVersion = androidVersion,
             buildDate = buildDate,
-            securityPatch = securityPatch,
+            deviceCodename = deviceCodename,
+            isUpdateAvailable = updateZipName != null,
             modifier = Modifier.fillMaxWidth(),
-            shape = if (isTv) {
-                CornerExtraLarge1
-            } else {
-                CornerExtraLarge1.copy(
-                    bottomStart = CornerSize(SettingsRadius.extraSmall2),
-                    bottomEnd = CornerSize(SettingsRadius.extraSmall2),
-                )
-            },
+            shape = CornerExtraLarge1,
         )
-
-        if (!isTv) {
-            Spacer(modifier = Modifier.height(SettingsDimension.paddingTiny))
-            DeviceInfoActionButtons()
-        } else {
-            DeviceInfoTvAction()
-        }
     }
 }
 
@@ -109,10 +106,11 @@ fun DeviceInfoBanner(
 private fun DeviceInfoBannerPreview() {
     SettingsTheme {
         DeviceInfoBanner(
-            buildVersion = "23.2",
-            androidVersion = "16",
+            buildVersion = "20",
+            androidVersion = "17",
             buildDate = "Feb 20",
-            securityPatch = "Feb 2026",
+            deviceCodename = "obiwan",
+            updateZipName = "Bliss-v20.0-obiwan-OFFICIAL-gapps-20260804"
         )
     }
 }

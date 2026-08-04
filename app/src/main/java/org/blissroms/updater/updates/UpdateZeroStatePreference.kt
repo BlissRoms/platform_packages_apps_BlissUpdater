@@ -28,7 +28,7 @@ import com.android.settingslib.spa.debug.UiModePreviews
 import com.android.settingslib.spa.framework.theme.SettingsSpace
 import com.android.settingslib.spa.framework.theme.SettingsTheme
 
-private val IconSize = 96.dp
+private val IconSize = 64.dp
 
 @Composable
 fun UpdateZeroStatePreference(
