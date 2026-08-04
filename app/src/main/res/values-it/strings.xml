@@ -64,9 +64,9 @@
     <string name="snack_download_verification_failed">Verifica dell\'aggiornamento fallita.</string>
     <string name="snack_download_verified">Download aggiornamento completato.</string>
     <string name="snack_update_not_installable">Questo aggiornamento non può essere installato sopra la versione corrente.</string>
-    <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
-    <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="Luglio 11, 2017">%2$s</xliff:g></string>
-    <string name="list_major_upgrade_recovery_install">Gli aggiornamenti della versione <xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g> devono essere installati manualmente. Consultare la guida del dispositivo per continuare.</string>
+    <string name="list_build_version">Bliss <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
+    <string name="list_build_version_date">Bliss <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="Luglio 11, 2017">%2$s</xliff:g></string>
+    <string name="list_major_upgrade_recovery_install">Gli aggiornamenti della versione <xliff:g id="brand_name" example="Bliss">%1$s</xliff:g> devono essere installati manualmente. Consultare la guida del dispositivo per continuare.</string>
     <string name="list_downgrade_blocked">Questo aggiornamento è più vecchio del sistema attualmente installato e non può essere applicato.</string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> di <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> di <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>

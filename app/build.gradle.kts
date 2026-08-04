@@ -27,7 +27,7 @@ android {
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "org.lineageos.updater"
+        applicationId = "org.blissroms.updater"
         minSdk = 34
         targetSdk = 34
         versionCode = 1
@@ -82,7 +82,7 @@ android {
             }
         }
     }
-    namespace = "org.lineageos.updater"
+    namespace = "org.blissroms.updater"
 }
 
 room {
