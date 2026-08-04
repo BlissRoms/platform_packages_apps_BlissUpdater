@@ -33,9 +33,6 @@ data class UpdateEntity(
     @ColumnInfo(name = "timestamp")
     val timestamp: Long,
 
-    @ColumnInfo(name = "type")
-    val type: String?,
-
     @ColumnInfo(name = "version")
     val version: String,
 
@@ -78,7 +75,6 @@ fun Update.toEntity() = UpdateEntity(
     status = status.persistentStatus,
     path = file?.absolutePath,
     timestamp = timestamp,
-    type = type,
     version = version,
     size = fileSize,
     name = name,
@@ -98,7 +94,6 @@ fun UpdateEntity.toUpdate() = Update(
     status = UpdateStatus.fromPersistentStatus(status),
     file = path?.let { File(it) },
     timestamp = timestamp,
-    type = type,
     version = version,
     fileSize = size,
     name = name,

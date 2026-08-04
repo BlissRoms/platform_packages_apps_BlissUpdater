@@ -18,7 +18,6 @@ object DeviceInfoUtils : SettingsLibDeviceInfoUtils() {
     private const val PROP_BUILD_VERSION_INCREMENTAL = "ro.build.version.incremental"
     private const val PROP_DEVICE = "ro.bliss.device"
     private const val PROP_NEXT_DEVICE = "ro.updater.next_device"
-    private const val PROP_RELEASE_TYPE = "ro.bliss.releasetype"
     private const val PROP_UPDATER_ALLOW_DOWNGRADING = "lineage.updater.allow_downgrading"
     private const val PROP_UPDATER_URI = "bliss.updater.uri"
     private const val PROP_UPDATE_RECOVERY = "persist.vendor.recovery_update"
@@ -44,9 +43,6 @@ object DeviceInfoUtils : SettingsLibDeviceInfoUtils() {
 
     @JvmStatic
     val isABDevice: Boolean = SystemProperties.getBoolean(PROP_AB_DEVICE, false)
-
-    @JvmStatic
-    val releaseType: String = SystemProperties.get(PROP_RELEASE_TYPE)
 
     // Mutable at runtime
     @JvmStatic

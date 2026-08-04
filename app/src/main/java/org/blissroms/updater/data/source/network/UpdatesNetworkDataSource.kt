@@ -24,7 +24,6 @@ class UpdatesNetworkDataSource(private val context: Context) {
             }
             return base
                 .replace("{device}", DeviceInfoUtils.device)
-                .replace("{type}", DeviceInfoUtils.releaseType.lowercase())
                 .replace("{incr}", DeviceInfoUtils.buildVersionIncremental)
         }
 

@@ -29,7 +29,6 @@ data class Update(
     val speed: Long = 0,
     val status: UpdateStatus = UpdateStatus.UNKNOWN,
     val timestamp: Long = 0,
-    val type: String? = null,
     val version: String = "",
 ) {
     fun withAvailableOnline(v: Boolean) = copy(isAvailableOnline = v)
@@ -47,7 +46,6 @@ data class Update(
     fun withSpeed(v: Long) = copy(speed = v)
     fun withStatus(v: UpdateStatus) = copy(status = v)
     fun withTimestamp(v: Long) = copy(timestamp = v)
-    fun withType(v: String?) = copy(type = v)
     fun withVersion(v: String) = copy(version = v)
 
     fun toBuilder() = Builder(this)
@@ -74,7 +72,6 @@ data class Update(
         private var speed: Long = 0,
         private var status: UpdateStatus = UpdateStatus.UNKNOWN,
         private var timestamp: Long = 0,
-        private var type: String? = null,
         private var version: String = "",
     ) {
         constructor(update: Update) : this(
@@ -83,7 +80,7 @@ data class Update(
             update.installProgress, update.name, update.osPatchLevel, update.osSdkLevel,
             update.payloadMetadataOffset, update.payloadMetadataSize, update.payloadOffset,
             update.payloadSize, update.payloadPropertiesOffset, update.payloadPropertiesSize,
-            update.progress, update.speed, update.status, update.timestamp, update.type,
+            update.progress, update.speed, update.status, update.timestamp,
             update.version,
         )
 
@@ -108,13 +105,12 @@ data class Update(
         fun setSpeed(v: Long) = apply { speed = v }
         fun setStatus(v: UpdateStatus) = apply { status = v }
         fun setTimestamp(v: Long) = apply { timestamp = v }
-        fun setType(v: String?) = apply { type = v }
         fun setVersion(v: String) = apply { version = v }
         fun build() = Update(
             isAvailableOnline, downloadId, downloadUrl, eta, file, fileSize,
             isFinalizing, installProgress, name, osPatchLevel, osSdkLevel, payloadMetadataOffset,
             payloadMetadataSize, payloadOffset, payloadSize, payloadPropertiesOffset,
-            payloadPropertiesSize, progress, speed, status, timestamp, type, version,
+            payloadPropertiesSize, progress, speed, status, timestamp, version,
         )
     }
 

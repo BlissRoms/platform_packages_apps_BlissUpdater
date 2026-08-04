@@ -24,7 +24,6 @@ data class NetworkUpdate(
     // @SerialName("date") val date: String,
     @SerialName("datetime") val datetime: Long,
     @SerialName("files") val files: List<NetworkUpdateFile>,
-    @SerialName("type") val type: String,
     @SerialName("version") val version: String,
 )
 
@@ -71,7 +70,6 @@ fun NetworkUpdate.toUpdate(): Update {
         downloadId = file.sha256,
         name = file.filename,
         timestamp = datetime,
-        type = type,
         fileSize = file.size,
         downloadUrl = file.url,
         version = version,
